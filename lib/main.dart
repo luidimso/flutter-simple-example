@@ -56,17 +56,34 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
+  String type = "Even";
+  double textScale = 10;
 
   void _incrementCounter() {
     setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
+      if(_counter % 2 == 0) {
+        type = "Odd";
+      } else {
+        type = "Even";
+      }
       _counter++;
 
       _counter > 10 ? _counter = 0 : null;
+
+      switch(_counter) {
+        case 0:
+          textScale = 2;
+          break;
+        case 3:
+          textScale = 4;
+          break;
+        case 6:
+          textScale = 6;
+          break;
+        case 9:
+          textScale = 8;
+          break;
+      }
     });
   }
 
@@ -113,7 +130,11 @@ class _MyHomePageState extends State<MyHomePage> {
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
+              textScaleFactor: textScale,
             ),
+            Text(
+              type,
+            )
           ],
         ),
       ),
