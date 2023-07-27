@@ -68,7 +68,7 @@ class _MyHomePageState extends State<MyHomePage> {
       }
       _counter++;
 
-      checkCounter() ? _counter = 0 : null;
+      checkCounter(10) ? _counter = 0 : null;
 
       switch(_counter) {
         case 0:
@@ -87,8 +87,8 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-  bool checkCounter() {
-    return _counter > 10;
+  bool checkCounter(int limit) {
+    return _counter > limit;
   }
 
   @override
