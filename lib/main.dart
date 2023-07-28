@@ -66,12 +66,15 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void _incrementCounter() {
     setState(() {
-      List<String> types = ['Odd', "Even"];
+      Map<int, String> types = {
+        0: "Odd",
+        1: "Even"
+      };
 
       if(_counter % 2 == 0) {
-        type = types.first;
+        type = types[0]!;
       } else {
-        type = types.last;
+        type = types[1]!;
       }
       _counter++;
       numbers.shuffle();
