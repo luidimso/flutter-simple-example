@@ -72,6 +72,10 @@ class _MyHomePageState extends State<MyHomePage> {
       _counter++;
       numbers.shuffle();
 
+      for(int i = 0; i < numbers.length; i++) {
+        numbers[i]++;
+      }
+
       checkCounter(10) ? _counter = 0 : null;
 
       switch(_counter) {
