@@ -61,10 +61,12 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void _incrementCounter() {
     setState(() {
+      List<String> types = ['Odd', "Even"];
+
       if(_counter % 2 == 0) {
-        type = "Odd";
+        type = types.first;
       } else {
-        type = "Even";
+        type = types.last;
       }
       _counter++;
 
