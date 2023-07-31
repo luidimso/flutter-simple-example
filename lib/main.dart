@@ -36,6 +36,11 @@ class MyApp extends StatelessWidget {
   }
 }
 
+enum Types {
+  odd,
+  even
+}
+
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
 
@@ -60,15 +65,15 @@ int numberGenerator(int index) {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
-  String type = "Even";
+  Types type = Types.values[0];
   double textScale = 10;
   List<int> numbers = List.generate(10, numberGenerator);
 
   void _incrementCounter() {
     setState(() {
-      Map<int, String> types = {
-        0: "Odd",
-        1: "Even"
+      Map<int, Types> types = {
+        0: Types.odd,
+        1: Types.even
       };
 
       if(_counter % 2 == 0) {
@@ -152,7 +157,7 @@ class _MyHomePageState extends State<MyHomePage> {
               textScaleFactor: textScale,
             ),
             Text(
-              type,
+              '$type',
             ),
             Text(
               '${numbers.first}',
