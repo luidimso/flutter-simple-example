@@ -66,7 +66,7 @@ int numberGenerator(int index) {
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
   Types type = Types.values[0];
-  double textScale = 10;
+  double textScale = "10" as double;
   List<int> numbers = List.generate(10, numberGenerator);
 
   void _incrementCounter() {
